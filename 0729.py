@@ -222,9 +222,60 @@ def question_4(arr):
         new_arr.append(temp)
         question_4(new_arr)
 
-arr = [2,6,8,14]
-#arr = [1,2,3]
-#arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-#arr = [9, 10]
-answer = question_4(arr)
+# arr = [2,6,8,14]
+# arr = [1,2,3]
+# arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# arr = [9, 10]
+# answer = question_4(arr)
 # print(answer, type(answer))
+
+# q5
+def question_5(n, s):
+    if s < 2:
+        return -1
+    s_2 = s // 2
+    s_3 = s - s_2
+    answer = [s_2, s_3]
+    return answer
+
+"""
+n = 2
+s = 1
+answer = question_5(n, s)
+print(answer)
+"""
+
+# q6
+def question_6(arr):
+    if len(arr) <= 1:
+        return -1
+    min = arr[0]
+    for i in arr:
+        if min > i:
+            min = i
+    new_arr = arr.copy()
+    new_arr.remove(min)
+    return new_arr
+
+# arr = [4, 3, 2, 1]
+# arr = [10]
+# answer = question_6(arr)
+# print(answer)
+
+# q7
+def question_7(arr):
+    temp = arr[0]
+    answer = []
+    answer.append(temp)
+    for i in arr:
+        if temp == i:
+            pass
+        else:
+            answer.append(i) 
+            temp = i
+    return answer
+
+arr = [1,1,3,3,0,1,1]
+# arr = [4,4,4,3,3]
+answer = question_7(arr)
+print(answer)
