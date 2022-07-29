@@ -127,4 +127,46 @@ def on_search_minmax(lists):
         if max[0] < i: max = [i, index]
     return [min[1], max[1]]
 
-print(on_search_minmax([2,4,6,1,3,9]))
+# print(on_search_minmax([2,4,6,1,3,9]))
+
+# q0
+def question_0(lists, number):
+    return_list = []
+    for i in lists:
+        if i < number:
+            return_list.append(i)
+    return return_list
+
+"""
+N, X = map(int, input().split())
+data = list(map(int, input().split()))
+answer = question_0(data, X)
+print(answer)
+"""
+
+# q1
+def question_1(lottos, win_nums):
+    joker = 0
+    check = 0
+    for i in lottos:
+        if i == 0:
+            joker = joker + 1
+        for j in win_nums:
+            if i == j:
+                check = check + 1
+    answer = []
+    answer.append(7 - (check + joker))
+    if 7 - check == 7:
+        answer.append(6)
+    else:
+        answer.append(7 - check)
+    return answer
+
+# lottos = [44, 1, 0, 0, 31, 25]
+# win_nums = [31, 10, 45, 1, 6, 19]
+# lottos = [0, 0, 0, 0, 0, 0]
+# win_nums = [38, 19, 20, 40, 15, 25]
+# lottos = [45, 4, 35, 20, 3, 9]
+# win_nums = [20, 9, 3, 45, 4, 35]
+# answer = question_1(lottos, win_nums)
+# print(answer)
