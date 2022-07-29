@@ -181,8 +181,8 @@ def question_2(numbers):
                 answer = answer - i
     return answer
 
-numbers = [1,2,3,4,6,7,8,0]
-print(question_2(numbers))
+# numbers = [1,2,3,4,6,7,8,0]
+# print(question_2(numbers))
 
 # q3
 def question_3(store, customer):
@@ -197,6 +197,34 @@ def question_3(store, customer):
         else: answer.append('no')
     return answer
 
+"""
 store = [2,3,7,8,9]
 customer = [7,5,9]
 print(question_3(store, customer))
+"""
+
+# q4
+def question_4(arr):
+    new_arr = arr.copy()
+    length = len(arr)
+    if length == 2:
+        min = np.min((new_arr))
+        for i in range(2, min+1):
+            if new_arr[0] % i == 0 and new_arr[1] % i == 0:
+                return_answer = int((new_arr[0] * new_arr[1]) / i)
+                print(return_answer)
+                # print(type(return_answer))
+                return return_answer
+    else:
+        temp = question_4([new_arr[0], new_arr[1]])
+        del new_arr[0]
+        del new_arr[0]
+        new_arr.append(temp)
+        question_4(new_arr)
+
+arr = [2,6,8,14]
+#arr = [1,2,3]
+#arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#arr = [9, 10]
+answer = question_4(arr)
+# print(answer, type(answer))
