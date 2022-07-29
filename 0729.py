@@ -170,3 +170,33 @@ def question_1(lottos, win_nums):
 # win_nums = [20, 9, 3, 45, 4, 35]
 # answer = question_1(lottos, win_nums)
 # print(answer)
+
+# q2
+def question_2(numbers):
+    answer = 0
+    for i in range(10):
+        answer = answer + i
+        for j in numbers:
+            if i == j:
+                answer = answer - i
+    return answer
+
+numbers = [1,2,3,4,6,7,8,0]
+print(question_2(numbers))
+
+# q3
+def question_3(store, customer):
+    answer = []
+    for i in customer:
+        check = False
+        for j in store:
+            if i == j:
+                check = True
+        if check == True:
+            answer.append('yes')
+        else: answer.append('no')
+    return answer
+
+store = [2,3,7,8,9]
+customer = [7,5,9]
+print(question_3(store, customer))
