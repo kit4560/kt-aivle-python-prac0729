@@ -206,14 +206,10 @@ print(question_3(store, customer))
 # q4
 def question_4(arr):
     new_arr = arr.copy()
-    try:
-        new_arr.remove(0)
-    except:
-        pass
-    try:
-        new_arr.remove(1)
-    except:
-        pass
+    try: new_arr.remove(0)
+    except: pass
+    try: new_arr.remove(1)
+    except: pass
     length = len(arr)
     if length == 2:
         min = np.min((new_arr))
