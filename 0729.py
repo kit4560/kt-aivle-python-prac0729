@@ -205,6 +205,8 @@ print(question_3(store, customer))
 
 # q4
 def question_4(arr):
+    global q4
+    
     new_arr = arr.copy()
     length = len(arr)
     if length == 2:
@@ -212,7 +214,8 @@ def question_4(arr):
         for i in range(2, min+1):
             if new_arr[0] % i == 0 and new_arr[1] % i == 0:
                 return_answer = int((new_arr[0] * new_arr[1]) / i)
-                print(return_answer)
+                q4 = return_answer
+                # print(return_answer)
                 # print(type(return_answer))
                 return return_answer
     else:
@@ -222,12 +225,14 @@ def question_4(arr):
         new_arr.append(temp)
         question_4(new_arr)
 
-# arr = [2,6,8,14]
+arr = [2,6,8,14]
 # arr = [1,2,3]
 # arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # arr = [9, 10]
+question_4(arr)
 # answer = question_4(arr)
-# print(answer, type(answer))
+answer = q4
+print(answer)
 
 # q5
 def question_5(n, s):
@@ -275,7 +280,9 @@ def question_7(arr):
             temp = i
     return answer
 
+"""
 arr = [1,1,3,3,0,1,1]
 # arr = [4,4,4,3,3]
 answer = question_7(arr)
 print(answer)
+"""
